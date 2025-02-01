@@ -1,6 +1,8 @@
+import "./index.css";
+
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
@@ -9,12 +11,16 @@ function App() {
 }
 
 function Header() {
-  return <h1>Fast React Pizza Co.</h1>;
+  return (
+    <header className="header">
+      <h1>Fast React Pizza Co.</h1>
+    </header>
+  );
 }
 
 function Menu() {
   return (
-    <div>
+    <div className="menu">
       <h2>Our menu</h2>
       <Pizza />
       <Pizza />
@@ -23,21 +29,26 @@ function Menu() {
   );
 }
 
-function Footer() {
+function Pizza() {
   return (
-    <footer>
-      {new Date().toLocaleTimeString()} We&apos;re currently open!
-    </footer>
+    <div className="pizza">
+      <img src="../public/pizzas/spinaci.jpg" />
+      <h3>Pizza Spinaci</h3>
+      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
+    </div>
   );
 }
 
-function Pizza() {
+function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = openHour >= 12 && closeHour <= 22;
+
   return (
-    <div>
-      <img src="../public/pizzas/spinaci.jpg" />
-      <h2>Pizza Spinaci</h2>
-      <p>Tomato, mozarella, spinach, and ricotta cheese</p>
-    </div>
+    <footer className="footer">
+      {new Date().toLocaleTimeString()} We&apos;re currently open!
+    </footer>
   );
 }
 
