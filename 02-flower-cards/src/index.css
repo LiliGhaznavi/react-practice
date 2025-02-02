@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-height: 100vh;
+  background-color: #fbe2e8;
+  font-family: "Edu AU VIC WA NT Pre", serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 75px;
+  margin: 75px 100px;
+}
+
+.card {
+  height: 30%;
+  width: 30%;
+  border: 3px solid #e6f9e6;
+  border-radius: 4px;
+  background-color: #e6f9e6;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.cardDes {
+  padding: 6px 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 18px;
+  padding-bottom: 6px;
+}
+
+p {
+  font-size: 14px;
+  text-align: justify;
+}
+
+ul {
+  margin: 6px 0;
+}
+
+li {
+  font-size: 10px;
+  list-style: none;
+  display: inline-block;
+  padding: 4px 8px;
+  margin-right: 12px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}

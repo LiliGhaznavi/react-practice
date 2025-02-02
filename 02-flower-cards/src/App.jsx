@@ -19,7 +19,7 @@ const flowersData = [
     photoUrl: "../public/flowers/orchid.jpg",
     bestUses: [
       { use: "Wedding bouquets", color: "#FFFFFF" },
-      { use: "Luxury gifts", color: "#D3D3D3" },
+      { use: "Luxury gifts", color: "#A8D0E6" },
       { use: "Elegant home decor", color: "#FAD0C4" },
     ],
   },
@@ -56,22 +56,31 @@ const Cards = function () {
 
 const Card = ({ flowerObj }) => {
   return (
-    <div>
+    <div className="card">
       <img src={flowerObj.photoUrl} />
-      <h2>{flowerObj.name}</h2>
-      <p>{flowerObj.story}</p>
-      <ul>
-        {flowerObj.bestUses.map((bestUse) => (
-          <BestUse bestUseObj={bestUse} key={bestUse.name} />
-        ))}
-      </ul>
+      <div className="cardDes">
+        <h2>{flowerObj.name}</h2>
+        <p>{flowerObj.story}</p>
+        <ul>
+          {flowerObj.bestUses.map((bestUse) => (
+            <BestUse bestUseObj={bestUse} key={bestUse.name} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
 
 function BestUse({ bestUseObj }) {
   return (
-    <li style={{ backgroundColor: bestUseObj.color }}>{bestUseObj.use}</li>
+    <li style={{ backgroundColor: bestUseObj.color }}>
+      {bestUseObj.use}
+      {bestUseObj.use === "Wedding bouquets" && " 💍"}
+      {bestUseObj.use === "Sympathy arrangements" && " 🕊️"}
+      {bestUseObj.use === "Elegant home decor" && " 🏡"}
+      {bestUseObj.use === "Luxury gifts" && " 🎁"}
+      {bestUseObj.use === "Corporate gifts" && " 🎁"}
+    </li>
   );
 }
 export default App;
