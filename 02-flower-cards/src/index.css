@@ -16,24 +16,28 @@ body {
   justify-content: center;
   gap: 75px;
   margin: 75px 100px;
+  align-items: stretch;
 }
 
 .card {
-  height: 30%;
+  min-height: 300px;
   width: 30%;
   border: 3px solid #e6f9e6;
   border-radius: 4px;
   background-color: #e6f9e6;
+  flex: 1;
+  flex-direction: column;
 }
 
 .card img {
   width: 100%;
-  height: 100%;
+  height: auto;
   border-bottom: 1px solid #d3d3d3;
 }
 
 .cardDes {
   padding: 6px 20px;
+  flex-grow: 1;
 }
 
 h2 {
