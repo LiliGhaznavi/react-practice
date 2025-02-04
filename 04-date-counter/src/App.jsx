@@ -1,3 +1,4 @@
+import "./index.css";
 import { useState } from "react";
 
 export default function App() {
@@ -17,15 +18,17 @@ function Counter() {
 
   return (
     <>
-      <button onClick={() => setIsOpen((is) => !is)}>&times;</button>
+      <button className="close" onClick={() => setIsOpen((is) => !is)}>
+        &times;
+      </button>
       {isOpen && (
         <main className="container">
-          <div>
+          <div className="flex">
             <button onClick={handleStepDecrement}>-</button>
             <h2>Step: {step}</h2>
             <button onClick={() => setStep((s) => s + 1)}>+</button>
           </div>
-          <div>
+          <div className="flex">
             <button onClick={() => setCount((c) => c - step)}>-</button>
             <h2>Count: {count}</h2>
             <button onClick={() => setCount((c) => c + step)}>+</button>
