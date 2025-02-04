@@ -6,6 +6,11 @@ export default function App() {
 
 function Counter() {
   const [isOpen, setIsOpen] = useState(true);
+  const [step, setStep] = useState(1);
+
+  function handleStepDecrement() {
+    if (step > 1) setStep((s) => s - 1);
+  }
 
   return (
     <>
@@ -13,9 +18,9 @@ function Counter() {
       {isOpen && (
         <main className="container">
           <div>
-            <button>-</button>
-            <h2>Step: 1</h2>
-            <button>+</button>
+            <button onClick={handleStepDecrement}>-</button>
+            <h2>Step: {step}</h2>
+            <button onClick={() => setStep((s) => s + 1)}>+</button>
           </div>
           <div>
             <button>-</button>
