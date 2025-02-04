@@ -20,7 +20,6 @@ function App() {
   function handleNext() {
     if (step < 3) {
       setStep((s) => s + 1);
-      setStep((s) => s + 1);
     }
   }
 
