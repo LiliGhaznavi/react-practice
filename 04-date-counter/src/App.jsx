@@ -7,6 +7,7 @@ export default function App() {
 function Counter() {
   const [isOpen, setIsOpen] = useState(true);
   const [step, setStep] = useState(1);
+  const [count, setCount] = useState(0);
 
   function handleStepDecrement() {
     if (step > 1) setStep((s) => s - 1);
@@ -23,9 +24,9 @@ function Counter() {
             <button onClick={() => setStep((s) => s + 1)}>+</button>
           </div>
           <div>
-            <button>-</button>
-            <h2>Count: 1</h2>
-            <button>+</button>
+            <button onClick={() => setCount((c) => c - step)}>-</button>
+            <h2>Count: {count}</h2>
+            <button onClick={() => setCount((c) => c + step)}>+</button>
           </div>
           <p>Today is Mon, Feb 4 2025.</p>
         </main>
