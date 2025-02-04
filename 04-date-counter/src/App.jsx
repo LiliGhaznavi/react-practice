@@ -1,12 +1,16 @@
+import { useState } from "react";
+
 export default function App() {
   return <Counter />;
 }
 
 function Counter() {
+  const [isOpen, setIsOpen] = useState(true);
+
   return (
     <>
-      <button>&times;</button>
-      {
+      <button onClick={() => setIsOpen((is) => !is)}>&times;</button>
+      {isOpen && (
         <main className="container">
           <div>
             <button>-</button>
@@ -20,7 +24,7 @@ function Counter() {
           </div>
           <p>Today is Mon, Feb 4 2025.</p>
         </main>
-      }
+      )}
     </>
   );
 }
