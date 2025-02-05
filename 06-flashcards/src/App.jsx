@@ -45,10 +45,20 @@ export default function App() {
 }
 
 const Flashcards = function () {
+  const [selectedId, setSelectedId] = useState(2002);
+
   return (
     <div className="flashcards">
       {questions.map((question) => (
-        <p key={question.id}>{question.question}</p>
+        <p
+          key={question.id}
+          className={question.id === selectedId ? "back" : ""}
+          onClick={() =>
+            setSelectedId(question.id !== selectedId ? question.id : null)
+          }
+        >
+          {question.id === selectedId ? question.answer : question.question}
+        </p>
       ))}
     </div>
   );
