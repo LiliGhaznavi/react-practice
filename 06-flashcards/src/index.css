@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #121212;
+  font-family: "Kanit", serif;
+}
+
+h1 {
+  color: #d3d3d3;
+  text-align: center;
+  margin-top: 80px;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.flashcards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 40px;
+  margin: 60px 140px;
+}
+
+.flashcards p {
+  background-color: #d3d3d3;
+  margin-top: 10px;
+  font-size: 18px;
+
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 4px;
+}
+
+.flashcards p:hover {
+  cursor: pointer;
+}
+
+.flashcards p.back {
+  background-color: #d4edda;
+  color: #064635;
+  font-size: 24px;
+  font-weight: 600;
+}
