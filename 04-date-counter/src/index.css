@@ -44,21 +44,51 @@ button:hover {
   justify-content: center;
 }
 
-.flex button {
+.flex p {
   background-color: #333333;
   color: white;
   min-width: 20px;
   min-height: 20px;
   border-radius: 4px;
+  text-align: center;
+  margin: 0;
+}
+
+.flex input {
+  margin: 0;
 }
 
 p {
   margin: 30px 0 10px 0px;
   text-align: center;
   font-size: 16px;
+  font-weight: 700;
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 16px;
   color: #333333;
+}
+
+.countInput {
+  background-color: #333333;
+  color: white;
+  max-width: 100px;
+  border-radius: 4px;
+  padding-left: 4px;
+}
+
+.countInput:focus {
+  border: 1px solid #ffb07c;
+}
+
+.reset {
+  background-color: #ffb07c;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-weight: 800;
+  text-align: center;
+  display: block;
+  margin: 24px auto 0 auto;
 }

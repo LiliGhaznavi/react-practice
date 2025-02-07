@@ -12,8 +12,10 @@ function Counter() {
   const currentDate = new Date();
   currentDate.setDate(currentDate.getDate() + count);
 
-  function handleStepDecrement() {
-    if (step > 1) setStep((s) => s - 1);
+  function handleReset(e) {
+    e.preventDefault();
+    setStep(1);
+    setCount(0);
   }
 
   return (
@@ -22,24 +24,40 @@ function Counter() {
         &times;
       </button>
       {isOpen && (
-        <main className="container">
-          <div className="flex">
-            <button onClick={handleStepDecrement}>-</button>
-            <h2>Step: {step}</h2>
-            <button onClick={() => setStep((s) => s + 1)}>+</button>
+        <div className="container" onSubmit={handleReset}>
+          <div className="slidecontainer flex">
+            <input
+              type="range"
+              min={1}
+              max={10}
+              value={step}
+              onChange={(e) => setStep(Number(e.target.value))}
+            />
+            <h2>{step}</h2>
           </div>
+
           <div className="flex">
-            <button onClick={() => setCount((c) => c - step)}>-</button>
-            <h2>Count: {count}</h2>
-            <button onClick={() => setCount((c) => c + step)}>+</button>
+            <p onClick={() => setCount((c) => c - step)}>-</p>
+            <input
+              className="countInput"
+              type="text"
+              value={count}
+              onChange={(e) => setCount(Number(e.target.value))}
+            />
+            <p onClick={() => setCount((c) => c + step)}>+</p>
           </div>
           <p>
             {count === 0 && `Today is `}
             {count > 0 && `${count} days from today is `}
-            {count < 0 && `${count} days ago from today was `}
+            {count < 0 && `${Math.abs(count)} days ago from today was `}
             {currentDate.toDateString()}.
           </p>
-        </main>
+          {step !== 1 || count !== 0 ? (
+            <button className="reset" onClick={handleReset}>
+              Reset
+            </button>
+          ) : null}
+        </div>
       )}
     </>
   );
