@@ -45,7 +45,7 @@ export default function App() {
 }
 
 const Flashcards = function () {
-  const [selectedId, setSelectedId] = useState(2002);
+  const [selectedId, setSelectedId] = useState(null);
 
   return (
     <div className="flashcards">
