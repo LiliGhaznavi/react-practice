@@ -39,22 +39,39 @@ function App() {
             Step {step}: {messages[step - 1]}
           </p>
           <div className="buttons">
-            <button
-              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+            <Button
+              bgColor="#7950f2"
+              color="#fff"
               onClick={handlePrevious}
-            >
-              Previous
-            </button>
-            <button
-              style={{ backgroundColor: "#7950f2", color: "#fff" }}
+              text="Previous"
+              emoji="👈"
+            />
+            <Button
+              bgColor="#7950f2"
+              color="#fff"
               onClick={handleNext}
-            >
-              Next
-            </button>
+              text="Next"
+              emoji="👉"
+            />
           </div>
         </div>
       )}
     </>
+  );
+}
+
+function Button({ bgColor, color, onClick, text, emoji }) {
+  return (
+    <button
+      style={{
+        backgroundColor: bgColor,
+        color: color,
+      }}
+      onClick={onClick}
+    >
+      <span>{emoji}</span>
+      {text}
+    </button>
   );
 }
 
