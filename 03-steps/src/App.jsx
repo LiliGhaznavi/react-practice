@@ -39,20 +39,12 @@ function App() {
             Step {step}: {messages[step - 1]}
           </p>
           <div className="buttons">
-            <Button
-              bgColor="#7950f2"
-              color="#fff"
-              onClick={handlePrevious}
-              text="Previous"
-              emoji="👈"
-            />
-            <Button
-              bgColor="#7950f2"
-              color="#fff"
-              onClick={handleNext}
-              text="Next"
-              emoji="👉"
-            />
+            <Button bgColor="#7950f2" color="#fff" onClick={handlePrevious}>
+              <span>👈</span> Previous
+            </Button>
+            <Button bgColor="#7950f2" color="#fff" onClick={handleNext}>
+              Next<span>👉</span>
+            </Button>
           </div>
         </div>
       )}
@@ -60,7 +52,7 @@ function App() {
   );
 }
 
-function Button({ bgColor, color, onClick, text, emoji }) {
+function Button({ bgColor, color, onClick, children }) {
   return (
     <button
       style={{
@@ -69,8 +61,7 @@ function Button({ bgColor, color, onClick, text, emoji }) {
       }}
       onClick={onClick}
     >
-      <span>{emoji}</span>
-      {text}
+      {children}
     </button>
   );
 }
