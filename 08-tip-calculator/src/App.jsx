@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./index.css";
 
 export default function App() {
   const [bill, setBill] = useState(0);
@@ -12,7 +13,7 @@ export default function App() {
   }
 
   return (
-    <div>
+    <div className="container">
       <BillInput bill={bill} OnAddBill={setBill} />
       <SelectPercentage
         id={1}
