@@ -72,11 +72,9 @@ function SelectPercentage({ id, percentage, onAddPercentage, children }) {
 }
 
 function Output({ bill, yourPercentage, friendPercentage }) {
-  const tipAverage = (yourPercentage + friendPercentage) / 2;
-
-  return (
-    <h1>{`You pay $${bill + tipAverage} ($${bill} + $${tipAverage} tip)`}</h1>
-  );
+  const percentagesAverage = (yourPercentage + friendPercentage) / 2;
+  const tip = Math.round((percentagesAverage * bill) / 100);
+  return <h1>{`You pay $${bill + tip} ($${bill} + $${tip} tip)`}</h1>;
 }
 
 function Reset({ onReset }) {
