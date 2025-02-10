@@ -29,12 +29,17 @@ export default function App() {
       >
         How did your friend like the service?
       </SelectPercentage>
-      <Output
-        bill={bill}
-        yourPercentage={yourPercentage}
-        friendPercentage={friendPercentage}
-      />
-      <Reset onReset={handleReset} />
+
+      {bill !== 0 && (
+        <>
+          <Reset onReset={handleReset} />
+          <Output
+            bill={bill}
+            yourPercentage={yourPercentage}
+            friendPercentage={friendPercentage}
+          />
+        </>
+      )}
     </div>
   );
 }
