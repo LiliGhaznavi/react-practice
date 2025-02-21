@@ -21,14 +21,8 @@ export default function App() {
         if (score > highscore) {
           setHighscore(score);
         }
-      } else if (guess > secretNumber) {
-        setMessage("📈 Too high");
-        if (score !== 1) {
-          setScore((s) => s > 1 && s - 1);
-        }
-      } else if (guess < secretNumber) {
-        setMessage("📉 Too low");
-
+      } else if (guess !== secretNumber) {
+        setMessage(guess > secretNumber ? "📈 Too high" : "📉 Too low");
         if (score !== 1) {
           setScore((s) => s > 1 && s - 1);
         }
