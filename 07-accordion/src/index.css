@@ -1,78 +1,83 @@
+/*
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+
+/* 
+MAIN COLOR: #087f5b
+GREY COLOR: #343a40
+*/
+
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  font-family: "Inter", sans-serif;
+  color: #343a40;
+  line-height: 1;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  width: 400px;
+.accordion {
+  width: 700px;
+  margin: 100px auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .item {
-  background-color: white;
-  margin: 10px 0;
-  padding: 15px 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  align-items: flex-start;
-  justify-content: space-between;
-  position: relative;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 0px 32px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  column-gap: 24px;
+  row-gap: 32px;
+  align-items: center;
 }
 
-.item.open {
-  background-color: #e0f7fa;
-}
-
-.number {
-  font-weight: bold;
-  color: #00796b;
-  margin-right: 10px;
-  margin-top: 5px;
-  display: inline;
-  margin-right: 26px;
-}
-
-.title-container {
-  flex-grow: 1;
-  cursor: pointer;
-}
-
+.number,
 .title {
-  font-size: 16px;
-  color: #333;
-  margin-bottom: 5px;
-  display: inline;
-  margin-right: 26px;
+  font-size: 24px;
   font-weight: 500;
 }
 
-.icon {
-  font-size: 18px;
-  color: #00796b;
-  margin-left: 10px;
-  cursor: pointer;
-  display: inline;
+.number {
+  color: #ced4da;
 }
 
-.content-box {
-  margin-top: 5px;
-  padding: 10px 0;
-  background-color: transparent;
-  color: #555;
+.title {
+  flex-basis: 600px;
+}
+
+.icon {
+  stroke: #087f5b;
+  width: 24px;
+  height: 24px;
+}
+
+.hidden-box {
+  grid-column: 2;
   font-size: 14px;
-  margin-left: 40px;
-  margin-right: 34px;
-  text-align: justify;
+  width: 500px;
+  line-height: 1.6;
+}
+
+.open {
+  border-top: 4px solid #087f5b;
+}
+
+.open .number,
+.open .title {
+  color: #087f5b;
+}
+.open .hidden-box {
+  display: block;
 }

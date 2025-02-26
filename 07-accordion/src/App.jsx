@@ -24,7 +24,7 @@ function Accordion({ data }) {
   const [curOpen, setCurOpen] = useState(null);
 
   return (
-    <ul>
+    <div className="accordion">
       {data.map((el, i) => (
         <AccordionItem
           curOpen={curOpen}
@@ -36,7 +36,7 @@ function Accordion({ data }) {
           {el.text}
         </AccordionItem>
       ))}
-    </ul>
+    </div>
   );
 }
 
@@ -50,8 +50,40 @@ function AccordionItem({ num, title, children, curOpen, onOpen }) {
     >
       <p className="number">{num < 9 ? `0${num + 1}` : num + 1}</p>
       <p className="title">{title}</p>
-      <p className="icon">{isOpen ? `-` : `+`}</p>
-      {isOpen && <div className="content-box">{children}</div>}
+      <p className="icon">
+        {isOpen ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="icon"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m4.5 15.75 7.5-7.5 7.5 7.5"
+            />
+          </svg>
+        ) : (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="icon"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m19.5 8.25-7.5 7.5-7.5-7.5"
+            />
+          </svg>
+        )}
+      </p>
+      {isOpen && <div className="hidden-box">{children}</div>}
     </div>
   );
 }
